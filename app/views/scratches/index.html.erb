@@ -1,0 +1,30 @@
+<h2>API</h2>
+
+<article>
+  <pre>
+    POST /data
+
+      data: text (raw SML)
+      application: string (optional)
+      author: string (optional)
+  </pre>
+</article>
+
+
+<h2>Data</h2>
+
+<ul>
+<% if @scratches.blank? -%>
+  <li>Nothing to see here</li>
+<% end -%>
+
+<% @scratches.each do |scratch| -%>
+  <li>#<%= scratch.id %>
+    &mdash; uploaded <%= time_ago_in_words(scratch.created_at).gsub('about ', '') %> ago
+    &mdash; Download:
+      <%= link_to 'XML', scratch_path(scratch, :format => 'xml') %>
+      - <%= link_to 'JSON', scratch_path(scratch, :format => 'json') %>
+  </li>
+<% end -%>
+</ul>
+

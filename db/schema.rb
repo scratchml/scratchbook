@@ -10,63 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008035805) do
+ActiveRecord::Schema.define(:version => 20120127053809) do
 
-  create_table "image_tags", :force => true do |t|
-    t.integer  "image_id"
-    t.integer  "tag_id"
-    t.integer  "user_id"
+  create_table "scratches", :force => true do |t|
+    t.binary   "data"
+    t.string   "application"
+    t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "images", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "found_on"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "reviews", :force => true do |t|
-    t.integer  "user_id"
-    t.text     "comment"
-    t.integer  "rating1"
-    t.integer  "rating2"
-    t.integer  "rating3"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
-
-  create_table "strains", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "strains", ["name"], :name => "index_strains_on_name", :unique => true
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_strains", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "strain_id"
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_strains", ["strain_id"], :name => "index_user_strains_on_strain_id"
-  add_index "user_strains", ["user_id"], :name => "index_user_strains_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

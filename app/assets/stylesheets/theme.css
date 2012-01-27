@@ -5,9 +5,9 @@ a, a:visited { color: #333; }
 a:hover { color: #99f; }
 a:active { color: #f0f; }
 
-h2, h3 { margin: 20px 0; font-weight: normal; }
-h2 { font-size: 30px; }
-h3 { font-size: 20px; }
+h2, h3 { margin: 25px 0; font-weight: normal; }
+h2 { font-size: 20px; }
+h3 { font-size: 14px; }
 
 .wrapper { margin: auto; width: 960px; }
 
@@ -24,7 +24,6 @@ h1#title a { color: #ddd; text-decoration: none; }
 .navigation a, .navigation a:visited { padding: 5px; color: #aaa; text-decoration: none; }
 #login_or_signup { float: right; margin-top: 20px; }
 #site_nav { float: left; margin-top: 20px; }
-
 
 #main {
   clear: both;
