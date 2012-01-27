@@ -30,9 +30,8 @@ From a file named <b>example.sml</b>:
 <% @scratches.each do |scratch| -%>
   <li>#<%= scratch.id %>
     &mdash; uploaded <%= time_ago_in_words(scratch.created_at).gsub('about ', '') %> ago
-    &mdash; Download:
-      <%= link_to 'XML', scratch_path(scratch, :format => 'xml') %>
-      - <%= link_to 'JSON', scratch_path(scratch, :format => 'json') %>
+    &mdash;
+      <%= link_to 'Download', scratch_path(scratch, :format => 'xml') %>
   </li>
 <% end -%>
 </ul>
