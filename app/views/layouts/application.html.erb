@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <title><%= @title && "#{@title} - ScratchML" || 'ScratchML' %></title>
+  <meta name="description" content="ScratchML">
+  <meta name="author" content="ScratchML team">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "application" %>
+
+  <script src="/assets/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+<div id="header" class="wrapper">
+  <h1 id="title"><a href="/"><img src="/assets/sml-header-small.gif" alt="Scratch Markup Language" /></a></h1>
+
+  <div id="login_or_signup" class="navigation">
+    <ul>
+      <% if current_user -%>
+        <li>Logged-in as <%= link_to current_user.email, settings_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path %></li>
+      <% else -%>
+        <li><%= link_to 'Login', new_user_session_path %>
+        <li><%= link_to 'Signup', new_user_registration_path %>
+      <% end -%>
+    </ul>
+  </div>
+
+  <div id="site_nav" class="navigation">
+    <ul>
+      <li><%= link_to 'Data', scratches_path %></li>
+      <li><%= link_to 'About', about_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div id="main" class="wrapper">
+  <div id="flash">
+	  <div class="alert"><%= flash[:alert] %></div>
+	  <div class="notice"><%= flash[:notice] %></div>
+	</div>
+
+  <%= yield %>
+</div>
+
+<div id="footer" class="wrapper">
+  &copy; 2012 no rights reserved
+</div>
+
+
+
+
+<!-- Javascript at the bottom for fast page loading -->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/javascripts//jquery-1.6.2.min.js"><\/script>')</script>
+
+<%= javascript_include_tag "application", :defer => 'defer' %>
+
+<!-- Prompt IE 6 users to install Chrome Frame. -->
+<!--[if lt IE 7 ]>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+<!-- Stats -->
+<%= render :partial => 'layouts/stats' %>
+
+</body>
+</html>

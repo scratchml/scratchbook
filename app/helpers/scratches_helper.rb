@@ -1,0 +1,2 @@
+module ScratchesHelper
+end

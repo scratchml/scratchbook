@@ -1,0 +1,2 @@
+class ScratchesController < ApplicationController
+end

@@ -1,0 +1,10 @@
+.bundle
+.DS_Store
+.gems
+.sass-cache
+*.tmproj
+db/*.sqlite3
+log/*.log
+tmp/
+public/avatars
+public/gifs

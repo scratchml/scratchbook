@@ -1,0 +1,58 @@
+
+body { font-family: Helvetica, Helvetica Neue, Arial, sans-serif; }
+
+a, a:visited { color: #333; }
+a:hover { color: #99f; }
+a:active { color: #f0f; }
+
+h2, h3 { margin: 20px 0; font-weight: normal; }
+h2 { font-size: 30px; }
+h3 { font-size: 20px; }
+
+.wrapper { margin: auto; width: 960px; }
+
+#header {
+	height: 70px;
+	margin-bottom: 50px;
+}
+
+h1#title { float: left; }
+h1#title img { width: 300px; }
+h1#title a { color: #ddd; text-decoration: none; }
+
+.navigation ul li { display: inline; }
+.navigation a, .navigation a:visited { padding: 5px; color: #aaa; text-decoration: none; }
+#login_or_signup { float: right; margin-top: 20px; }
+#site_nav { float: left; margin-top: 20px; }
+
+
+#main {
+  clear: both;
+  padding-bottom: 100px;
+}
+
+#main p {
+  font: 16px/26px Helvetica, Helvetica Neue, Arial;
+  width: 620px;
+}
+
+#footer {
+	height: 80px;
+	margin-top: 50px;
+	color: #eee;
+	font-size: 90%;
+	margin-top: 20px;
+}
+
+
+/* forms */
+label { clear: both; float: left; display: block; margin-top: 10px; margin-right: 20px; width: 60px; }
+input { font-size: 14pt; color: #333; padding: 5px 8px; margin: 10px 0; width: 400px; }
+input, textarea { background-color: #f9f9f9; }
+textarea { width: 400px; }
+
+
+
+
+
+
