@@ -1,7 +1,7 @@
 Scratchbook
 ===========
 
-See <http://scratchmarkuplanguage.com>
+See <http://scratchml.com>
 
 More info coming soon
 
