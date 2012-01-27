@@ -10,6 +10,15 @@
   </pre>
 </article>
 
+<h2>How To Upload</h2>
+
+Directly with curl:
+
+<pre>   curl -d"data=<sml>...</sml>" "http://<%= request.host_with_port %>/data.xml"</pre>
+
+From a file named <b>example.sml</b>:
+
+<pre>   curl --form data=@example.sml "http://<%= request.host_with_port %>/data.xml"</pre>
 
 <h2>Data</h2>
 
