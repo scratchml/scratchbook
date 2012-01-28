@@ -1,5 +1,4 @@
 // Keep everything in anonymous function, called on window load.
-if(window.addEventListener) {
 window.addEventListener('load', function () {
 
   var canvas, context, canvaso, contexto;
@@ -12,7 +11,7 @@ window.addEventListener('load', function () {
 
     canvaso = document.getElementById('editor_image');
     if (!canvaso) {
-      alert('Error: I cannot find the canvas element!');
+      console.log('Error: I cannot find the canvas element!');
       return;
     }
 
@@ -207,4 +206,4 @@ window.addEventListener('load', function () {
 
   init();
 
-}, false); }
+}, false);

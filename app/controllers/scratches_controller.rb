@@ -11,14 +11,13 @@ class ScratchesController < ApplicationController
     respond_to do |format|
       format.html { render }
       format.xml { render :xml => @scratch.data }
-      format.json { raise 'TODO' }
+      format.json { render :json => @scratch.to_json }
     end
   end
 
   def notation
-
+    render
   end
-
 
   def update
     raise 'TODO'

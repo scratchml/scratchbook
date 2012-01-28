@@ -10,11 +10,26 @@ describe ScratchesController do
   end
 
   describe "GET #show" do
+    let(:scratch) { Factory.create(:scratch) }
+
     it "works" do
-      scratch = Factory.create(:scratch)
       get :show, :id => scratch.to_param
       response.should be_success
       assigns(:scratch).should == scratch
+    end
+
+    it ".xml works" do # aka .sml
+      get :show, :id => scratch.to_param, :format => 'xml'
+      response.should be_success
+      xml = Nokogiri::XML.parse(response.body)
+      xml.errors.should be_blank
+    end
+
+    it ".json works" do
+      get :show, :id => scratch.to_param, :format => 'json'
+      response.should be_success
+      json = JSON.parse(response.body)
+      json['data'].should_not be_blank
     end
   end
 
