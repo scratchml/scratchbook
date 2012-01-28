@@ -14,11 +14,14 @@ class Scratch < ActiveRecord::Base
   def to_hash(options = {})
     hash = self.attributes
     hash.reject! { |k,v| v.blank? }
-    puts self.data_hash.keys.inspect
     hash['data'] = self.data_hash && self.data_hash['sml']
     hash['data'] ||= self.data_hash && self.data_hash['SML']
     hash['data'] ||= {}
     return hash
+  end
+
+  def cached_hash
+    Rails.cache.fetch("/scratches/#{self.id}/hash", :expires_in => 1.day) { self.to_hash }
   end
 
   def to_json(options = {})
