@@ -4,7 +4,8 @@ class Scratch < ActiveRecord::Base
 
   def thumbnail_path
     num = self.id % 3 + 1
-    "/assets/wheels/wheel-#{num}.gif"
+    # "/assets/wheels/wheel-#{num}.gif"
+    "/assets/vinyl_record_lite-160.jpg"
   end
 
   def waveform_path

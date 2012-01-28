@@ -68,10 +68,10 @@ textarea { width: 400px; }
   overflow: hidden;
   margin: 0  20px 20px 0;
 }
-#scratches li .id { position: absolute; font-size: 13pt; font-weight: bold; color: #ccc; }
+#scratches li .id { position: absolute; font-size: 25pt; font-weight: bold; color: #555; }
 #scratches li .thumbnail { width: 162px; display: block; margin: 0 auto; margin-bottom: 5px; }
-#scratches li .download { float: right; }
-#scratches li .created_at { float: left; color: #ccc; }
+#scratches li .download { float: left; }
+#scratches li .created_at { float: right; color: #aaa; }
 
 #scratch { padding: 30px 0; width: 1000px; overflow: visible; }
 #scratch .info { margin-right: 10px; }
