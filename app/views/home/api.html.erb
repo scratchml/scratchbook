@@ -1,0 +1,21 @@
+<h2>API</h2>
+
+<pre>
+  POST /data
+
+    data: text (raw SML)
+    application: string (optional)
+    author: string (optional)
+</pre>
+
+<h2>How To Upload</h2>
+
+curl, with raw data in a "data" field:
+
+<pre>   curl -d"data=<sml>...</sml>" "http://<%= request.host_with_port %>/data.xml"</pre>
+
+curl, uploading a file (<b>example.sml</b>) in the "data" field:
+
+<pre>   curl --form data=@example.sml "http://<%= request.host_with_port %>/data.xml"</pre>
+
+<h2>Data</h2>

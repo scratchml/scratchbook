@@ -1,6 +1,6 @@
 class ScratchesController < ApplicationController
 
-  before_filter :get_scratch, :only => [:show, :update, :destroy]
+  before_filter :get_scratch, :only => [:show, :update, :destroy, :notation]
   skip_before_filter :verify_authenticity_token, :only => :create
 
   def index
@@ -14,6 +14,11 @@ class ScratchesController < ApplicationController
       format.json { raise 'TODO' }
     end
   end
+
+  def notation
+
+  end
+
 
   def update
     raise 'TODO'

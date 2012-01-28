@@ -1,0 +1,28 @@
+#scratch
+
+  .sketch
+    = render :partial => 'notation_editor'
+
+  .notation{:style => "border: 1px solid #f0f; width: 1310px; height: 230px;"}
+    =# link_to 'Transcribe TTM Notation', scratch_notation_path(@scratch)
+    =# image_tag 'ttm/ttm_staff.gif'
+    = image_tag 'ttm/ttm_staff_filled.gif'
+    =# image_tag 'ttm_staff3.gif'
+
+  - if false
+    .info
+      .id
+        %span ID:
+        = @scratch.id
+      .created_at
+        %span Uploaded:
+        = time_ago_in_words(@scratch.created_at)
+        ago
+      .download
+        = link_to 'Download', scratch_path(@scratch, :format => 'xml')
+    .thumbnail
+      = image_tag @scratch.thumbnail_path
+    .waveform
+      = image_tag @scratch.waveform_path
+
+  .clear

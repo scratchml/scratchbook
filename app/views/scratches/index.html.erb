@@ -1,38 +1,24 @@
-<h2>API</h2>
-
-<article>
-  <pre>
-    POST /data
-
-      data: text (raw SML)
-      application: string (optional)
-      author: string (optional)
-  </pre>
-</article>
-
-<h2>How To Upload</h2>
-
-Directly with curl:
-
-<pre>   curl -d"data=<sml>...</sml>" "http://<%= request.host_with_port %>/data.xml"</pre>
-
-From a file named <b>example.sml</b>:
-
-<pre>   curl --form data=@example.sml "http://<%= request.host_with_port %>/data.xml"</pre>
-
-<h2>Data</h2>
-
-<ul>
+<ul id="scratches">
 <% if @scratches.blank? -%>
   <li>Nothing to see here</li>
 <% end -%>
 
 <% @scratches.each do |scratch| -%>
-  <li>#<%= scratch.id %>
-    &mdash; uploaded <%= time_ago_in_words(scratch.created_at).gsub('about ', '') %> ago
-    &mdash;
-      <%= link_to 'Download', scratch_path(scratch, :format => 'xml') %>
+  <li class="scratch">
+
+    <div class="id">#<%= scratch.id %></div>
+
+    <a href="<%= scratch_path(scratch) %>">
+      <div class="thumbnail"><img src="<%= scratch.thumbnail_path %>" alt="" /></div>
+      <!-- <div class="waveform"><img src="<%= scratch.waveform_path %>" alt="" /></div> -->
+    </a>
+
+    <div class="download"><%= link_to 'Download', scratch_path(scratch, :format => 'xml') %></div>
+    <div class="created_at"><%= time_ago_in_words(scratch.created_at).gsub('about ', '') %> ago</div>
+
   </li>
 <% end -%>
 </ul>
+
+<div class="clear"></div>
 

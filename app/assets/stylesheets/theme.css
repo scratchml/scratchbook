@@ -9,14 +9,16 @@ h2, h3 { margin: 25px 0; font-weight: normal; }
 h2 { font-size: 20px; }
 h3 { font-size: 14px; }
 
-.wrapper { margin: auto; width: 960px; }
+.wrapper { margin: auto; width: 900px; }
+.clear { clear: both; }
+
 
 #header {
 	height: 70px;
 	margin-bottom: 50px;
 }
 
-h1#title { float: left; }
+h1#title { position: absolute; top: -10px; left: 10px; }
 h1#title img { width: 300px; }
 h1#title a { color: #ddd; text-decoration: none; }
 
@@ -26,7 +28,9 @@ h1#title a { color: #ddd; text-decoration: none; }
 #site_nav { float: left; margin-top: 20px; }
 
 #main {
+/*  position: relative;*/
   clear: both;
+  margin-top: 140px; /* accomodate absolute header */
   padding-bottom: 100px;
 }
 
@@ -36,9 +40,10 @@ h1#title a { color: #ddd; text-decoration: none; }
 }
 
 #footer {
+  text-align: center;
 	height: 80px;
-	margin-top: 50px;
-	color: #eee;
+	margin-top: 150px;
+	color: #ccc;
 	font-size: 90%;
 	margin-top: 20px;
 }
@@ -53,5 +58,26 @@ textarea { width: 400px; }
 
 
 
+
+#scratches { list-style: none;}
+#scratches li {
+  float: left;
+  width: 190px;
+/*  height: 190px;*/
+/*  text-align: center;*/
+  padding: 10px;
+  border: 2px solid #eee;
+  overflow: hidden;
+  margin: 0  20px 20px 0;
+}
+#scratches li .id { position: absolute; font-size: 13pt; font-weight: bold; color: #ccc; }
+#scratches li .thumbnail { width: 162px; display: block; margin: 0 auto; margin-bottom: 5px; }
+#scratches li .download { float: right; }
+#scratches li .created_at { float: left; color: #ccc; }
+
+#scratch { padding: 30px 0; width: 1000px; overflow: visible; }
+#scratch .info { margin-right: 10px; }
+#scratch .notation { width: 100%; }
+#scratch .notation img { }
 
 

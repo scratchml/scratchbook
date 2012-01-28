@@ -20,12 +20,13 @@
 
   <%= stylesheet_link_tag "application" %>
 
-  <script src="/assets/modernizr-2.0.6.min.js"></script>
+  <script src="/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
 
 <div id="header" class="wrapper">
+
   <h1 id="title"><a href="/"><img src="/assets/sml-header-small.gif" alt="Scratch Markup Language" /></a></h1>
 
   <div id="login_or_signup" class="navigation">
@@ -40,12 +41,6 @@
     </ul>
   </div>
 
-  <!-- <div id="site_nav" class="navigation">
-    <ul>
-      <li><%= link_to 'Data', data_path %></li>
-      <li><%= link_to 'About', about_path %></li>
-    </ul>
-  </div> -->
 </div>
 
 <div id="main" class="wrapper">
@@ -67,7 +62,7 @@
 <!-- Javascript at the bottom for fast page loading -->
 <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/assets/javascripts//jquery-1.6.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/javascripts/jquery-1.6.2.min.js"><\/script>')</script>
 
 <%= javascript_include_tag "application", :defer => 'defer' %>
 

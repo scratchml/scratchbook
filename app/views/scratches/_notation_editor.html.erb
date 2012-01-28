@@ -1,0 +1,22 @@
+<style type="text/css">
+  .wrapper { width: 100%; padding-left: 50px; }
+
+  #editor_options { display: none; }
+  #editor_options label { width: 80px; }
+
+  #editor_wrapper { position: relative; padding: 0; margin: 0; }
+  #editor_image { border: 1px solid #f0f; /*background: url(/assets/ttm/ttm_staff.gif) no-repeat;*/ }
+  #editor_image_temp { position: absolute; top: 1px; left: 1px; }
+</style>
+
+<div id="editor_options">
+  <label>Drawing tool:</label>
+  <select id="drawing_tool">
+    <option value="pencil">Pencil</option>
+    <option value="line">Line</option>
+  </select>
+</div>
+
+<div id="editor_wrapper">
+  <canvas id="editor_image" width="1310" height="230"></canvas>
+</div>
