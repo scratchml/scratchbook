@@ -14,9 +14,9 @@ class Scratch < ActiveRecord::Base
   def to_hash(options = {})
     hash = self.attributes
     hash.reject! { |k,v| v.blank? }
-    puts self.data_hash.keys
-    hash['data'] = self.data_hash && self.data_hash[:sml]
-    hash['data'] ||= self.data_hash && self.data_hash[:SML]
+    puts self.data_hash.keys.inspect
+    hash['data'] = self.data_hash && self.data_hash['sml']
+    hash['data'] ||= self.data_hash && self.data_hash['SML']
     hash['data'] ||= {}
     return hash
   end
@@ -26,7 +26,7 @@ class Scratch < ActiveRecord::Base
   end
 
   def data_hash
-    @hash ||= self.convert_data_to_hash
+    @hash ||= self.convert_data_to_hash.stringify_keys
   end
 
   def convert_data_to_hash

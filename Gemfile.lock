@@ -40,6 +40,7 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano_colors (0.5.5)
     cocaine (0.2.0)
+    dalli (1.1.4)
     devise (1.4.7)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -163,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano_colors
+  dalli
   devise
   factory_girl_rails
   haml

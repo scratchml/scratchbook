@@ -2,16 +2,18 @@ class ScratchesController < ApplicationController
 
   before_filter :get_scratch, :only => [:show, :update, :destroy, :notation]
   skip_before_filter :verify_authenticity_token, :only => :create
+  caches_action :show, :expires_in => 1.hour, :cache_path => lambda{ request_cache_key }
 
   def index
     @scratches = Scratch.order('created_at DESC').limit(50)
   end
 
   def show
+    expire_action
     respond_to do |format|
       format.html { render }
       format.xml { render :xml => @scratch.data }
-      format.json { render :json => @scratch.to_json }
+      format.json { render :json => @scratch.to_hash, :callback => params[:callback] }
     end
   end
 
@@ -58,4 +60,9 @@ protected
   def get_scratch
     @scratch = Scratch.find(params[:id])
   end
+
+  def request_cache_key(user=nil)
+    "#{params[:controller]}/#{params[:action]}.#{params[:format] || 'html'}"
+  end
+
 end

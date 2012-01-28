@@ -8,6 +8,7 @@ gem 'json'
 gem 'paperclip'
 gem 'nokogiri'
 gem 'mechanize'
+gem 'dalli'
 
 group :assets do
   # gem 'sass-rails', "  ~> 3.1.3"
