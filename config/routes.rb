@@ -13,6 +13,7 @@ Scratchbook::Application.routes.draw do
   get '/api' => 'home#api', :as => :api
   get '/about' => 'home#about', :as => :about
   get '/contact' => 'home#contact', :as => :contact
+  get '/mailing_list' => redirect('http://groups.google.com/group/scratchml')
 
   get '/settings' => 'users#settings', :as => :settings
   get '/:id' => 'users#show', :as => :user

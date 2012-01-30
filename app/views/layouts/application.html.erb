@@ -25,47 +25,49 @@
 
 <body>
 
-<div id="header" class="wrapper">
+<div id="container">
+  <div id="header" class="wrapper">
 
-  <h1 id="title"><a href="/"><img src="/assets/sml-header-small.gif" alt="Scratch Markup Language" /></a></h1>
+    <h1 id="title"><a href="/"><img src="/assets/sml-header-small.gif" alt="Scratch Markup Language" /></a></h1>
 
-  <div id="site_nav" class="navigation">
-    <ul>
-      <!-- <li><%= link_to 'Home', root_path %></li> -->
-      <li><%= link_to 'About', about_path %></li>
-      <li><%= link_to 'Data', scratches_path %></li>
-      <li><%= link_to 'Code', "https://github.com/scratchml", :target => "_blank" %></li>
-      <li><%= link_to 'Contact', "mailto:jamie@fffff.at?subject=ScratchML" %></li>
-    </ul>
+    <div id="site_nav" class="navigation">
+      <ul>
+        <!-- <li><%= link_to 'Home', root_path %></li> -->
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Data', scratches_path %></li>
+        <li><%= link_to 'GitHub', "https://github.com/scratchml", :target => "_blank" %></li>
+        <li><%= link_to 'Mailing List', "http://groups.google.com/group/scratchml", :target => "_blank" %></li>
+        <li><%= link_to 'Contact', "mailto:jamie@fffff.at?subject=ScratchML" %></li>
+      </ul>
+    </div>
+
+    <div id="login_or_signup" class="navigation">
+      <ul>
+        <% if current_user -%>
+          <li>Logged-in as <%= link_to current_user.email, settings_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path %></li>
+        <% else -%>
+          <li><%= link_to 'Login', new_user_session_path %>
+          <li><%= link_to 'Signup', new_user_registration_path %>
+        <% end -%>
+      </ul>
+    </div>
+
   </div>
 
-  <div id="login_or_signup" class="navigation">
-    <ul>
-      <% if current_user -%>
-        <li>Logged-in as <%= link_to current_user.email, settings_path %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path %></li>
-      <% else -%>
-        <li><%= link_to 'Login', new_user_session_path %>
-        <li><%= link_to 'Signup', new_user_registration_path %>
-      <% end -%>
-    </ul>
+  <div id="main" class="wrapper">
+    <div id="flash">
+  	  <div class="alert"><%= flash[:alert] %></div>
+  	  <div class="notice"><%= flash[:notice] %></div>
+  	</div>
+
+    <%= yield %>
   </div>
 
+  <div id="footer" class="wrapper">
+    <%= image_tag 'copyleft34.png', :width => 12 %>&nbsp; 2012 no rights reserved. A <a href="http://fffff.at">FAT Lab</a> production.
+  </div>
 </div>
-
-<div id="main" class="wrapper">
-  <div id="flash">
-	  <div class="alert"><%= flash[:alert] %></div>
-	  <div class="notice"><%= flash[:notice] %></div>
-	</div>
-
-  <%= yield %>
-</div>
-
-<div id="footer" class="wrapper">
-  &copy; 2012 no rights reserved
-</div>
-
 
 
 
