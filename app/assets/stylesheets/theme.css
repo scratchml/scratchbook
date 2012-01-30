@@ -65,7 +65,19 @@ input, textarea { background-color: #f9f9f9; }
 textarea { width: 400px; }
 
 
+#socialmedia {
+  position: absolute;
+  margin-left: 825px;
+  z-index: 10;
+  width: 220px;
+  overflow: hidden;
+}
 
+/*#socialmedia div { float: left; margin-left: 8px; }*/
+#socialmedia div { display: block; margin-top: 10px; }
+#socialmedia .google { }
+#socialmedia .twitter { }
+#socialmedia .facebook { }
 
 
 #scratches { list-style: none;}
