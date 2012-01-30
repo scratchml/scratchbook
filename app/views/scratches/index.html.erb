@@ -12,7 +12,7 @@
 
     <div class="id">#<%= scratch.id %></div>
 
-    <a href="<%= scratch_path(scratch) %>">
+    <a href="<%= scratch_path(scratch, :format => 'xml') %>">
       <div class="thumbnail"><img src="<%= scratch.thumbnail_path %>" alt="" /></div>
       <!-- <div class="waveform"><img src="<%= scratch.waveform_path %>" alt="" /></div> -->
     </a>
