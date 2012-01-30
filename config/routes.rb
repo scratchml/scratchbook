@@ -18,7 +18,7 @@ Scratchbook::Application.routes.draw do
   get '/:id' => 'users#show', :as => :user
 
   # root :to => 'home#frontpage'
-  root :to => 'scratches#index'
+  root :to => 'home#about'
 
   # match ':controller(/:action(/:id(.:format)))'
 end

@@ -2,8 +2,7 @@
 body { font-family: Helvetica, Helvetica Neue, Arial, sans-serif; }
 
 a, a:visited { color: #333; }
-a:hover { color: #99f; }
-a:active { color: #f0f; }
+a:hover, a:active { color: #f00; }
 
 h2, h3 { margin: 25px 0; font-weight: normal; }
 h2 { font-size: 20px; }
@@ -19,13 +18,17 @@ h3 { font-size: 14px; }
 }
 
 h1#title { position: absolute; top: -10px; left: 10px; }
-h1#title img { width: 300px; }
+h1#title img { width: 320px; }
 h1#title a { color: #ddd; text-decoration: none; }
 
+.navigation { margin-top: 95px; }
 .navigation ul li { display: inline; }
-.navigation a, .navigation a:visited { padding: 5px; color: #aaa; text-decoration: none; }
-#login_or_signup { float: right; margin: 20px 30px 0 0; }
-#site_nav { float: left; margin-top: 20px; }
+.navigation a, .navigation a:visited { padding: 2px 3px 1px; color: #aaa; text-decoration: none; }
+/*#login_or_signup { float: right; margin: 20px 30px 0 0; }*/
+#login_or_signup { display: none; }
+#site_nav { float: left; margin-left: 310px; padding-right: 25px; font-size: 12pt; background: url(/assets/backgrounds/gray-transparent.png); }
+#site_nav a { background: #000; color: #fff; border: 1px solid transparent; text-transform: uppercase; }
+#site_nav a:hover { background: #f00; color: #fff;  }
 
 #main {
   clear: both;
@@ -34,7 +37,6 @@ h1#title a { color: #ddd; text-decoration: none; }
 
 #main p {
   font: 16px/26px Helvetica, Helvetica Neue, Arial;
-  width: 620px;
 }
 
 #footer {
@@ -68,6 +70,7 @@ textarea { width: 400px; }
   overflow: hidden;
   margin: 0  20px 20px 0;
 }
+#scratches li:hover { border-color: #000; }
 #scratches li .id { position: absolute; font-size: 25pt; font-weight: bold; color: #555; }
 #scratches li .thumbnail { width: 162px; display: block; margin: 0 auto; margin-bottom: 5px; }
 #scratches li .download { float: left; }
@@ -80,4 +83,7 @@ textarea { width: 400px; }
 
 .notation { border: 1px solid #f0f; width: 1310px; height: 230px; }
 
-
+#main .text { padding-left: 100px; line-height: 1.2em; width: 620px;  }
+#main .text h2 { font-weight: bold; margin: 40px 0 10px; padding: 0; }
+#main .text p { padding: 0; margin: 6px 0 12px; }
+#main .text a { }
