@@ -12,7 +12,7 @@ class ScratchesController < ApplicationController
     expire_action
     respond_to do |format|
       format.html { render }
-      format.xml { render :xml => @scratch.data }
+      format.xml { render :xml => @scratch.cached_hash }
       format.json { render :json => @scratch.cached_hash, :callback => params[:callback] }
     end
   end
